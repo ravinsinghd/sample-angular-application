@@ -1,9 +1,16 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class UserFormComponent implements OnInit {
   @Output() arrayChanged = new EventEmitter();

@@ -2,5 +2,11 @@
   <div>
     <app-user-form (arrayChanged)="dataChanged($event)"></app-user-form>
   </div>
-  <div><app-user-table [listOfName]="list"></app-user-table></div>
+  <div *ngIf="list && list.length > 0">
+    <app-user-table [listOfName]="list"></app-user-table>
+  </div>
 </div>
+<!-- <app-mark-list></app-mark-list> -->
+
+<!-- <input type="text" [(ngModel)]="value1" />
+<app-life-cycle [value]="value1"></app-life-cycle> -->

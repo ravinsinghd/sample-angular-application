@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'hello-world';
   name = 'ravin';
   list: string[] = [];
+  value1 = 2;
 
   dataChanged(data: string[]) {
     this.list = data;

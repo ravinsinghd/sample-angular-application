@@ -1,0 +1,11 @@
+<table>
+  <ng-container *ngFor="let mark of markList">
+    <tr ngClass="row" *ngIf="mark.examStatus === 'appeared'">
+      <td>{{ mark.studentName }}</td>
+      <td>{{ mark.examStatus }}</td>
+      <td [ngClass]="{ fail: mark && mark.mark && mark.mark <= 35 }">
+        {{ mark.mark }}
+      </td>
+    </tr>
+  </ng-container>
+</table>
