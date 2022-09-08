@@ -6,12 +6,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  value = true;
   title = 'hello-world';
-  name = 'ravin';
-  list: string[] = [];
-  value1 = 2;
 
-  dataChanged(data: string[]) {
-    this.list = data;
+  toggle() {
+    this.value = !this.value;
   }
 }

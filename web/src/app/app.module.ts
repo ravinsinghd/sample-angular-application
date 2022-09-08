@@ -12,6 +12,7 @@ import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 import { AppService } from './app.service';
+import { TestComponentComponent } from './test-component/test-component.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AppService } from './app.service';
     Multiply2Pipe,
     MarkListComponent,
     LifeCycleComponent,
+    TestComponentComponent,
   ],
   imports: [
     BrowserModule,
