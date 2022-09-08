@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserTableComponent } from './user-table/user-table.component';
@@ -13,6 +16,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 import { AppService } from './app.service';
 import { TestComponentComponent } from './test-component/test-component.component';
+import { AllusersComponent } from './allusers/allusers.component';
+import { AllpostComponent } from './allpost/allpost.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,8 @@ import { TestComponentComponent } from './test-component/test-component.componen
     MarkListComponent,
     LifeCycleComponent,
     TestComponentComponent,
+    AllusersComponent,
+    AllpostComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +37,7 @@ import { TestComponentComponent } from './test-component/test-component.componen
     FormsModule,
     LoginModule,
     DashboardModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
