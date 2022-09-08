@@ -5,6 +5,7 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-user-form',
@@ -13,18 +14,13 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class UserFormComponent implements OnInit {
-  @Output() arrayChanged = new EventEmitter();
-
   name = '';
-  listOfNames: string[] = [];
-
-  constructor() {}
+  constructor(private appService: AppService) {}
 
   ngOnInit(): void {}
 
   buttonClick() {
-    this.listOfNames.push(this.name);
+    this.appService.addUsers(this.name);
     this.name = '';
-    this.arrayChanged.emit(this.listOfNames);
   }
 }

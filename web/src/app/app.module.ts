@@ -11,6 +11,7 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-user-table',
@@ -7,8 +8,13 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class UserTableComponent implements OnInit {
-  @Input() listOfName: string[] = [];
-  constructor() {}
+  listOfName: string[] = [];
+  constructor(private appService: AppService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.listOfName = this.appService.getUsers();
+  }
+  updateData() {
+    this.listOfName = this.appService.getUsers();
+  }
 }
