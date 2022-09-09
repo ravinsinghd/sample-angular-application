@@ -16,15 +16,7 @@ export class AllusersComponent implements OnInit {
       .getRequest<user[]>('http://localhost:3000/users/ravin')
       .subscribe((users) => {
         this.users = users;
-        const updatedUsers = this.users.map((user) => {
-          const updatedUsers = {
-            name: user.name,
-            email: user.email,
-            img: user.profile.img,
-            mobile: user.profile.mobileNo,
-          };
-          return updatedUsers;
-        });
+        console.log(this.users);
       });
   }
 
