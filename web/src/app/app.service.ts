@@ -16,7 +16,11 @@ export class AppService {
     return [...this.users];
   }
 
-  getRequest(url: string) {
-    return this.httpClient.get(url);
+  getRequest<T>(url: string) {
+    return this.httpClient.get<T>(url);
+  }
+
+  postRequest(url: string, data: any) {
+    return this.httpClient.post(url, data);
   }
 }
