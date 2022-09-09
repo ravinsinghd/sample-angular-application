@@ -1,11 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - testlistforng 
-
-defaults:
-  run:
-    working-directory: api
+name: Build and deploy Node.js app to Azure Web App - testlistforng
 
 on:
   push:
@@ -16,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: api
 
     steps:
       - uses: actions/checkout@v2
@@ -30,7 +29,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-      
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
