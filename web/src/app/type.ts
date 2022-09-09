@@ -1,10 +1,17 @@
-export interface user {
+export interface UserResponse {
   name: string;
   email: string;
-  profile: profile;
+  profile: Profile;
 }
 
-export interface profile {
+export interface Profile {
+  mobileNo: string;
+  img: string;
+}
+
+export interface User {
+  name: string;
+  email: string;
   mobileNo: string;
   img: string;
 }

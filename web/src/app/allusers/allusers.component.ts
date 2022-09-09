@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
-import { user } from '../type';
+import { User, UserResponse } from '../type';
 
 @Component({
   selector: 'app-allusers',
@@ -8,26 +8,44 @@ import { user } from '../type';
   styleUrls: ['./allusers.component.scss'],
 })
 export class AllusersComponent implements OnInit {
-  users: user[] = [];
+  users: User[] = [];
+  name: string = '';
+  email: string = '';
+  mobile: string = '';
+  img: string = '';
   constructor(private appService: AppService) {}
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers() {
     this.appService
-      .getRequest<user[]>('http://localhost:3000/users/ravin')
+      .getRequest<UserResponse[]>('http://localhost:3000/users/ravin')
       .subscribe((users) => {
-        this.users = users;
-        console.log(this.users);
+        this.users = users.map((user) => {
+          const updatedUser: User = {
+            name: user.name,
+            email: user.email,
+            mobileNo: user?.profile?.mobileNo,
+            img: user?.profile?.img,
+          };
+          return updatedUser;
+        });
       });
   }
 
   addUsers() {
-    const data: user = {
-      name: '',
-      email: '',
-      profile: { img: '', mobileNo: '' },
+    const data: UserResponse = {
+      name: this.name,
+      email: this.email,
+      profile: { img: this.img, mobileNo: this.mobile },
     };
     this.appService
       .postRequest('http://localhost:3000/users/ravin', data)
-      .subscribe((res) => {});
+      .subscribe((res) => {
+        console.log(res);
+        this.getUsers();
+      });
   }
 }
