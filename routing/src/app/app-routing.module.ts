@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 import { ErrorComponent } from './error/error.component';
+import { RoleGuard } from './guard/role.guard';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    canActivate: [RoleGuard],
   },
   {
     path: 'dashboard',
