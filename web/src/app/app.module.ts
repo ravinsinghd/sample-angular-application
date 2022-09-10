@@ -18,6 +18,9 @@ import { AppService } from './app.service';
 import { TestComponentComponent } from './test-component/test-component.component';
 import { AllusersComponent } from './allusers/allusers.component';
 import { AllpostComponent } from './allpost/allpost.component';
+import { ChartComponent } from './chart/chart.component';
+import { ErrorComponent } from './error/error.component';
+import { EditContactComponent } from './edit-contact/edit-contact.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { AllpostComponent } from './allpost/allpost.component';
     TestComponentComponent,
     AllusersComponent,
     AllpostComponent,
+    ChartComponent,
+    ErrorComponent,
+    EditContactComponent,
   ],
   imports: [
     BrowserModule,
