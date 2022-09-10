@@ -21,9 +21,7 @@ export class AllusersComponent implements OnInit {
 
   getUsers() {
     this.appService
-      .getRequest<UserResponse[]>(
-        'https://testlistforng.azurewebsites.net/users/ravin'
-      )
+      .getRequest<UserResponse[]>('http://localhost:3000/users/ravin')
       .subscribe((users) => {
         this.users = users.map((user) => {
           const updatedUser: User = {
@@ -44,10 +42,10 @@ export class AllusersComponent implements OnInit {
       profile: { img: this.img, mobileNo: this.mobile },
     };
     this.appService
-      .postRequest('https://testlistforng.azurewebsites.net/users/ravin', data)
+      .postRequest('http://localhost:3000/users/ravin', data)
       .subscribe((res) => {
         console.log(res);
-        this.getUsers();
+        this.appService.dataUpdated.next(true);
       });
   }
 }
