@@ -1,1 +1,41 @@
-<p>allusers works!</p>
+<div>
+  <div>
+    <div>
+      Name
+      <input type="text" [(ngModel)]="name" />
+    </div>
+    <div>
+      Email
+      <input type="email" [(ngModel)]="email" />
+    </div>
+    <div>
+      MobileNumber
+      <input type="number" [(ngModel)]="mobile" />
+    </div>
+    <div>
+      Image URL
+      <input type="text" [(ngModel)]="img" />
+    </div>
+    <div>
+      <button (click)="addUsers()">Submit</button>
+    </div>
+  </div>
+  <!-- <div>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Image</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.mobileNo }}</td>
+          <td>{{ user.img }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+</div>

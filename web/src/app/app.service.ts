@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
   users: string[] = [];
+  dataUpdated = new Subject();
+
   constructor(private httpClient: HttpClient) {}
 
   addUsers(user: string) {
@@ -16,7 +19,11 @@ export class AppService {
     return [...this.users];
   }
 
-  getRequest(url: string) {
-    return this.httpClient.get(url);
+  getRequest<T>(url: string) {
+    return this.httpClient.get<T>(url);
+  }
+
+  postRequest(url: string, data: any) {
+    return this.httpClient.post(url, data);
   }
 }

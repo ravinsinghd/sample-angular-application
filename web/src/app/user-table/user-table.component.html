@@ -1,10 +1,16 @@
-<div class="container">
-  <table>
-    <tbody>
-      <tr *ngFor="let name of listOfName">
-        <td>{{ name }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<button (click)="updateData()">Refresh</button>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Image</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.mobileNo }}</td>
+      <td>{{ user.img }}</td>
+    </tr>
+  </tbody>
+</table>

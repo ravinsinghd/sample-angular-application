@@ -1,0 +1,9 @@
+<table>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.mobile }}</td>
+      <td><button (click)="editContact(contact)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
